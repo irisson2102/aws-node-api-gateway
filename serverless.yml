@@ -1,0 +1,31 @@
+service: aws-node-http-api-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+plugins:
+  - serverless-offline
+
+package:
+  individually: true
+  patterns:
+    - "*/**"
+
+functions:
+  hello-world:
+    handler: helloWorld/handler.hello
+    package:
+      patterns:
+        - "helloWorld/**"
+    events:
+      - http:
+          path: /
+          method: get
+  # get-users:
+  #   handler: getUsers/handler.getUsers
+  #   events:
+  #     - http:
+  #         path: /users
+  #         method: get
