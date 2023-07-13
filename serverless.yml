@@ -18,7 +18,7 @@ functions:
     handler: helloWorld/handler.hello
     package:
       patterns:
-        - "helloWorld/**"
+        - "helloWorld/handler.js"
     events:
       - http:
           path: /
