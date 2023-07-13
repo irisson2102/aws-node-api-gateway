@@ -11,14 +11,14 @@ plugins:
 package:
   individually: true
   patterns:
-    - "*/**"
+    - "!*/**"
 
 functions:
   hello-world:
     handler: helloWorld/handler.hello
     package:
       patterns:
-        - "helloWorld/handler.js"
+        - "helloWorld/**"
     events:
       - http:
           path: /
