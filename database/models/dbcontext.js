@@ -4,10 +4,11 @@
 // import MeetUsers from './meetUsers.js'
 // import relationships from './relationships.js'
 
-const sequelize = require('../connection')
+const { sequelize } = require('../connection')
+const { Users } = require('./users')
 
 const dbcontext = {
-  Users: require('./users')(sequelize),
+  Users: Users(sequelize),
   // Meets: Meets(sequelize),
   // MeetUsers: MeetUsers(sequelize),
 }

@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const { config } = require('./config')
 
-module.exports = new Sequelize({
+const sequelize = new Sequelize({
   username: config.user,
   password: config.password,
   database: config.database,
@@ -11,4 +11,6 @@ module.exports = new Sequelize({
   dialect: config.dialect,
   pool: config.pool
 })
+
+module.exports = { sequelize }
 
