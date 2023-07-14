@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 
-module.exports = (sequelize) => {
+const Users = (sequelize) => {
   const user = sequelize.define('Users', {
     id: {
       primaryKey: true,
@@ -43,3 +43,5 @@ module.exports = (sequelize) => {
 
   return user
 }
+
+module.exports = { Users }
